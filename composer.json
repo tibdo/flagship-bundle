@@ -1,0 +1,20 @@
+{
+  "name": "tidbo/flagship-bundle",
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "symfony-bundle",
+  "description": "AB Tasty Flagship.io Symfony bundle (non-official)",
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Tidbo\\FlagshipBundle\\": ""
+    }
+  },
+  "require": {
+    "wcomnisky/flagship-php-sdk": "^v1.2.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpunit/phpunit": "^9.0"
+  }
+}

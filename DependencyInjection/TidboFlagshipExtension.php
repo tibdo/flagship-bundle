@@ -5,6 +5,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\HttpClient\HttpClient;
 
 class TidboFlagshipExtension extends Extension
 {
@@ -22,6 +23,13 @@ class TidboFlagshipExtension extends Extension
 
         $container->setParameter("tidbo_flagship.baseUrl", $config['baseUrl']);
         $container->setParameter("tidbo_flagship.environmentId", $config['environmentId']);
+
+        $defaultOptions = [];
+        if ($config['options']['timeout']) {
+            $defaultOptions['timeout'] = $config['options']['timeout'];
+        }
+
+        $container->setParameter("tidbo_flagship.http_client_options", $defaultOptions);
 
         $loader = new XmlFileLoader(
             $container,

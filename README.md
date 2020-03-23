@@ -9,10 +9,18 @@ This is a wrapper for the library [Flagship PHP SDK](https://wcomnisky.github.io
 
 ## Installation
 1. Create a file named tidbo_flagship.yaml in config/packages directory of the symfony application with the content
-```shell
+```
 tidbo_flagship:
     baseUrl: "flagship_baseUrl"
     environmentId: "your_environmentId"
+```
+you can specify the timeout like this:
+```
+tidbo_flagship:
+    ...
+    options: 
+        # timeout of 1 s
+        timeout: 1
 ```
 
 ### Requirements

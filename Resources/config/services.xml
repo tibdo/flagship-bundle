@@ -5,10 +5,14 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="Wcomnisky\Flagship\Flagship">
+        <service id="tidbo_flagship.service" class="Wcomnisky\Flagship\Flagship">
             <argument>%tidbo_flagship.baseUrl%</argument>
             <argument>%tidbo_flagship.environmentId%</argument>
-            <argument type="service" id="Symfony\Contracts\HttpClient\HttpClientInterface"/>
+            <argument type="service" id="tidbo_flagship.http_client"/>
+        </service>
+        <service id="tidbo_flagship.http_client" class="Symfony\Contracts\HttpClient\HttpClientInterface">
+            <factory class="Symfony\Component\HttpClient\HttpClient" method="create"/>
+            <argument>%tidbo_flagship.http_client_options%</argument>
         </service>
     </services>
 </container>

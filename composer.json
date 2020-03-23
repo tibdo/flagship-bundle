@@ -1,7 +1,7 @@
 {
   "name": "tidbo/flagship-bundle",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "symfony-bundle",
   "description": "AB Tasty Flagship.io Symfony bundle (non-official)",
   "minimum-stability": "dev",

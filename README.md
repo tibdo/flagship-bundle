@@ -22,6 +22,8 @@ tidbo_flagship:
         # timeout of 1 s
         timeout: 1
 ```
+### USE
+You can use the bundle by injecting the service "tidbo_flagship.service"
 
 ### Requirements
 
